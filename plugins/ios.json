@@ -1,0 +1,18 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "io.github.fraigo.vuecordova"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "io.github.fraigo.vuecordova"
+    }
+  },
+  "dependent_plugins": {}
+}

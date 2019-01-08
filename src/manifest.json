@@ -1,0 +1,15 @@
+{
+  "name": "<%= app.title %>",
+  "short_name": "<%= app.shortTitle %>",
+  "icons": [
+    {
+      "src": "<%= app.icon %>",
+      "sizes": "<%= app.iconSize %>x<%= app.iconSize %>",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#4DBA87"
+}

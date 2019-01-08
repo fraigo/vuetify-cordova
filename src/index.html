@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= htmlWebpackPlugin.options.app.title %></title>
+    <link rel="icon" type="image/png" sizes="<%= htmlWebpackPlugin.options.app.iconSize %>x<%= htmlWebpackPlugin.options.app.iconSize %>" href="<%= htmlWebpackPlugin.files.publicPath %><%= htmlWebpackPlugin.options.app.icon %>">
+    <!--[if IE]><link rel="shortcut icon" href="/img/icons/favicon.ico"><![endif]-->
+    <!-- Add to home screen for Android and modern mobile browsers -->
+    <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>manifest.json">
+    <meta name="theme-color" content="#4DBA87">
+
+    <!-- Facebook OpenGraph  Social media attributes -->
+    <meta property="og:title" content="<%= htmlWebpackPlugin.options.app.title %>"/>
+    <meta property="og:description" content="<%= htmlWebpackPlugin.options.app.description %>"/>
+    <meta property="og:site_name" content="<%= htmlWebpackPlugin.options.app.title %>"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="<%= htmlWebpackPlugin.options.app.url %>"/>
+    <link rel="canonical" href="<%= htmlWebpackPlugin.options.app.url %>" />
+
+    <!-- Facebook OpenGraph  Social media image link url and size (must be http, not https) -->
+    <meta property="og:image" content="<%= htmlWebpackPlugin.options.app.url.replace('https:','http:') %><%= htmlWebpackPlugin.options.app.icon %>"/>
+    <meta property="og:image:width" content="<%= htmlWebpackPlugin.options.app.iconSize %>"/>
+    <meta property="og:image:height" content="<%= htmlWebpackPlugin.options.app.iconSize %>"/>
+
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="<%= htmlWebpackPlugin.options.app.title %>">
+    <link rel="apple-touch-icon" href="<%= htmlWebpackPlugin.files.publicPath %>img/icons/apple-touch-icon-152x152.png">
+    <!-- Add to home screen for Windows -->
+    <meta name="msapplication-TileImage" content="<%= htmlWebpackPlugin.files.publicPath %><%= htmlWebpackPlugin.options.app.icon %>">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <!-- External Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700|Material+Icons' rel="stylesheet" type="text/css">
+    <% for (var chunk of webpack.chunks) {
+        for (var file of chunk.files) {
+          if (file.match(/\.(js|css)$/)) { %>
+    <link rel="<%= chunk.initial?'preload':'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>"><% }}} %>
+    <style>
+    @keyframes fade {
+      from { opacity: 1.0; }
+      50% { opacity: 0.4; }
+      to { opacity: 1.0; }
+    }
+    @-webkit-keyframes fade {
+        from { opacity: 1.0; }
+        50% { opacity: 0.4; }
+        to { opacity: 1.0; }
+    }
+    .blinking {
+        animation:fade 3000ms infinite;
+        -webkit-animation:fade 3000ms infinite;
+    }
+    #splash{
+      padding-top:10vh;
+    } 
+    </style>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<%= htmlWebpackPlugin.options.app.googleAnalyticsKey %>"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '<%= htmlWebpackPlugin.options.app.googleAnalyticsKey %>');
+    </script>
+  </head>
+  <body>
+    <noscript>
+      This is your fallback content in case JavaScript fails to load.
+    </noscript>
+    <div id="app" >
+      <center><img class="blinking" src="<%= htmlWebpackPlugin.files.publicPath %>img/icons/icon.png" id="splash"></center>
+    </div>
+    <% if (false) { %>
+      <script>document.location.replace('./www/')</script>
+    <% } %>
+    <!-- Todo: only include in production -->
+    <%= htmlWebpackPlugin.options.serviceWorkerLoader %>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
