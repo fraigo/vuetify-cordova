@@ -7,7 +7,8 @@ import VueCordova from 'vue-cordova'
 import VueHead from 'vue-head'
 import VeeValidate from 'vee-validate'
 
-import '../node_modules/@fortawesome/fontawesome-free/css/all-no-svg.css'
+import '../node_modules/@fortawesome/fontawesome-free/css/fontawesome.css'
+import './lib/fontawesome/fontawesome-basic-fonts.css'
 import 'animate.css'
 import store from './config/store'
 
