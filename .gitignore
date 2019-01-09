@@ -1,0 +1,5 @@
+*
+!/www
+!index.html
+!config.xml
+!.gitignore
