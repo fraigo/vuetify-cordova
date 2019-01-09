@@ -1,5 +1,5 @@
 *
 !/www
-!index.html
-!config.xml
-!.gitignore
+!/config.xml
+!/.gitignore
+!/README.md
