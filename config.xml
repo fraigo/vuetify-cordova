@@ -7,9 +7,15 @@
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
+    <preference name="BackupWebStorage" value="local" />
     <plugin name="cordova-plugin-device" spec="1" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
-    <icon src="img/icons/icon.png"/>
+    <icon height="57" platform="ios" src="res/icon/ios/icon-57.png" width="57" />
+    <icon height="114" platform="ios" src="res/icon/ios/icon-57-2x.png" width="114" />
+    <icon height="72" platform="ios" src="res/icon/ios/icon-72.png" width="72" />
+    <icon height="144" platform="ios" src="res/icon/ios/icon-72-2x.png" width="144" />
+    <icon density="hdpi" height="72" platform="android" src="res/icon/android/icon-72.png" width="72" />
+    <icon density="xhdpi" height="96" platform="android" src="res/icon/android/icon-96.png" width="96" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -24,6 +30,6 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-    <engine name="android" spec="^7.0.0" />
-    <engine name="ios" spec="^4.5.4" />
+    <engine name="android" spec="^7.1.4" />
+    <engine name="ios" spec="^4.5.5" />
 </widget>

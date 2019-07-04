@@ -7,10 +7,10 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-whitelist": {
+    "cordova-plugin-device": {
       "PACKAGE_NAME": "io.github.fraigo.vuecordova"
     },
-    "cordova-plugin-device": {
+    "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "io.github.fraigo.vuecordova"
     }
   },
