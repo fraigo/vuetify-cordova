@@ -89,7 +89,7 @@
     "lolex": "^2.0.0",
     "mocha": "^5.2.0",
     "nightwatch": "^1.0.18",
-    "node-sass": "^4.9.0",
+    "node-sass": "^7.0.0",
     "opn": "^5.1.0",
     "optimize-css-assets-webpack-plugin": "^2.0.0",
     "ora": "^1.2.0",
